@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Сторінка переліку користувачів</title>
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Email</th>
+				<th>Пароль</th>
+			</tr>
+		</thead>
+		<tr th:each="user : ${usersFromServer}">
+			<td th:text="${user.key}"></td>
+			<td th:text="${user.value}"></td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Title</title>
+	<title>Привіт!</title>
 </head>
 <body>
-Привіт, <span th:text="${firstName} + ' ' + ${lastName}">!</span>
+Привіт<span th:if="${firstName != '' && lastName != ''}" th:text="', ' + ${firstName} + ' ' + ${lastName}"></span>!
+<div>
+	Хочете увійти в систему?
+	<form method="GET" action="/web4/login">
+		<input type="submit" value="Увійти">
+	</form>
+</div>
 </body>
 </html>
