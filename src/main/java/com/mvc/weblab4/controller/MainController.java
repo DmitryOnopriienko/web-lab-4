@@ -54,12 +54,17 @@ public class MainController {
     return "login-page";
   }
 
+  @PostMapping("/logout")
+  public String logout(HttpSession session) {
+    session.setAttribute("IS_LOGGED_IN", false);
+    return "redirect:/login";
+  }
 
   @GetMapping("/users")
   public String users(Model model, HttpSession session) {
     if (session.getAttribute("IS_LOGGED_IN") == null
             || session.getAttribute("IS_LOGGED_IN").equals(false)) {
-      model.addAttribute("error", "Ви не авторизовані!");
+      model.addAttribute("notAuthorized", true);
       return "login-page";
     }
     model.addAttribute("usersFromServer", usersDao.findAll());

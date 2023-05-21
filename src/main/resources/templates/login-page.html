@@ -15,6 +15,6 @@
 <div th:if="${loginFailed == true}">
 	Неправильний логін або пароль! (підказка: admin/admin, або user/user)
 </div>
-<div th:if="${error != null}" th:text="${error}"></div>
+<div th:if="${notAuthorized == true}">Ви не авторизовані!</div>
 </body>
 </html>
