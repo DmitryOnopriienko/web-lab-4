@@ -30,7 +30,7 @@ public class MainController {
                       @RequestParam(value = "first-name", defaultValue = "") String firstName,
                       @RequestParam(value = "last-name", defaultValue = "") String lastName) {
     String name = firstName + " " + lastName;
-    model.addAttribute("name", name);
+    model.addAttribute("name", name.trim());
     return "hi";
   }
 
