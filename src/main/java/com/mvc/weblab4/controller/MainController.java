@@ -29,8 +29,8 @@ public class MainController {
   public String sayHi(Model model,
                       @RequestParam(value = "first-name", defaultValue = "") String firstName,
                       @RequestParam(value = "last-name", defaultValue = "") String lastName) {
-    model.addAttribute("firstName", firstName);
-    model.addAttribute("lastName", lastName);
+    String name = firstName + " " + lastName;
+    model.addAttribute("name", name);
     return "hi";
   }
 
